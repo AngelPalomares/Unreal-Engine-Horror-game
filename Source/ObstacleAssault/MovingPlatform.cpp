@@ -16,7 +16,6 @@ void AMovingPlatform::BeginPlay()
 {
 	Super::BeginPlay();
 	
-	SetActorLocation(FVector(MyVector));
 	
 }
 
@@ -24,6 +23,14 @@ void AMovingPlatform::BeginPlay()
 void AMovingPlatform::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+
+	if(ActorLocation == MyVector)
+	{
+		SetActorLocation(FVector(AnotherVector));
+	}else if(ActorLocation == AnotherVector){
+		SetActorLocation(FVector(MyVector));
+	}
 
 }
 

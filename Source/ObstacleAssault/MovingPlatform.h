@@ -26,6 +26,13 @@ public:
 public:
 
 	UPROPERTY(EditAnywhere)
+	FTransform ActorTransform = GetActorTransform();
+	UPROPERTY(EditAnywhere)
+	FVector ActorLocation = ActorTransform.GetLocation();
+
+	UPROPERTY(EditAnywhere)
 	FVector MyVector = FVector(0,0,0);
+	UPROPERTY(EditAnywhere)
+	FVector AnotherVector = FVector(0,0,0);
 
 };
